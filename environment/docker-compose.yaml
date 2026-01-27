@@ -1,0 +1,16 @@
+services:
+  restate:
+    image: docker.restate.dev/restatedev/restate:latest
+    ports:
+      - "8080:8080"   # Ingress
+      - "9070:9070"   # Admin
+      - "5122:5122"   # Node-to-node
+    volumes:
+      - restate-data:/restate-data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      RESTATE_NODE_NAME: restate-1
+
+volumes:
+  restate-data:
