@@ -1,3 +1,15 @@
 spring:
   application:
     name: service
+
+greetingPrefix: hi
+
+server:
+  port: 3000
+
+restate:
+  sdk:
+    http:
+      port: 9080
+  client:
+    base-url: http://localhost:8080
